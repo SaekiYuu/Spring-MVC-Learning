@@ -3,5 +3,24 @@
  "http://java.sun.com/dtd/web-app_2_3.dtd" >
 
 <web-app>
-  <display-name>Archetype Created Web Application</display-name>
+  <display-name>Spring-MVC-Learning</display-name>
+  <!-- Config Spring-MVC DispatcherServlet -->
+  <servlet>
+    <servlet-name>SpringMVCDispatcherServlet</servlet-name>
+    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+    <init-param>
+      <!-- Path of config file of Spring-MVC -->
+      <param-name>contextConfigLocation</param-name>
+      <param-value>/WEB-INF/springmvc-config.xml</param-value>
+    </init-param>
+    <!-- Initialize servlet when webapp startup -->
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SpringMVCDispatcherServlet</servlet-name>
+    <url-pattern>/</url-pattern>
+  </servlet-mapping>
+  <welcome-file-list>
+    <welcome-file>register.jsp</welcome-file>
+  </welcome-file-list>
 </web-app>
